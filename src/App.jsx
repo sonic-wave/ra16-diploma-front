@@ -15,9 +15,9 @@ function App() {
 
   return (
     <>
-      <Router basename='/'>
+      <Router basename='/ra16-diploma-front/'>
         <Routes>
-          <Route path="/" exact element={<MainPage />} />
+          <Route path="/ra16-diploma-front/" exact element={<MainPage />} />
           <Route path="/catalog" exact element={<CatalogPage />} />
           <Route path="catalog/:id" element={<CatalogItem />} />
           <Route path="/about" exact element={<About />} />
