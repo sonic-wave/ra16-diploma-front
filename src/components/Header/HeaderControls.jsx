@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { addSearchTerm, clearSearchList } from '../../redux/slices/searchSlice';
 import { useNavigate } from 'react-router-dom';
 import { fetchCatalog } from '../../redux/slices/catalogSlice';
+import './HeaderControls.css';
 
 
 export const HeaderControls = () => {

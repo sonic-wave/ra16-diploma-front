@@ -6,6 +6,7 @@ import { fetchCatalog, fetchCatalogItem } from '../../redux/slices/catalogSlice'
 import { useNavigate } from 'react-router-dom';
 import { formatNumber } from '../../functions/formatNumber';
 import { Loader } from '../Loader/Loader';
+import './Catalog.css';
 
 export const Catalog = ({ children }) => {
     const [loadMore, setLoadMore] = useState('items');
