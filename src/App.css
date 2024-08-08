@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic-ext');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=cyrillic-ext');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=cyrillic-ext");
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
   color: #727e86;
 }
 
-a, a:hover, a:visited, a:active {
+a,
+a:hover,
+a:visited,
+a:active {
   text-decoration: none;
 }
 
@@ -27,7 +30,7 @@ section {
 }
 
 .preloader {
-  margin: 10px auto;  
+  margin: 10px auto;
   position: relative;
   width: 30px;
   height: 30px;
@@ -42,7 +45,7 @@ section {
   animation: spin 2s ease infinite;
 }
 .preloader :first-child {
-  background: #19A68C;
+  background: #19a68c;
   animation-delay: -1.5s;
 }
 .preloader :nth-child(2) {
@@ -80,7 +83,8 @@ section {
   color: #ff0000;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   margin-bottom: 1.5em;
   margin-top: 2em;
 }
@@ -94,4 +98,3 @@ h2, .h2 {
   background-color: #727e86;
   border-color: #727e86;
 }
-

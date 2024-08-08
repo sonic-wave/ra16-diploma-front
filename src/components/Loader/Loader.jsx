@@ -1,12 +1,10 @@
-import React from 'react'
-
 export const Loader = () => {
-    return (
+  return (
     <div className="preloader">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    )
-}
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  );
+};

@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
-import { Header } from '../Header/Header'
-import { Banner } from '../Banner/Banner'
-import { Footer } from '../Footer/Footer'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { addCartList } from '../../redux/slices/cartSlice'
+import { useEffect, useState } from "react";
+import { Header } from "../Header/Header";
+import { Banner } from "../Banner/Banner";
+import { Footer } from "../Footer/Footer";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../hooks";
+import { addCartList } from "../../redux/slices/cartSlice";
 
 export const CatalogItem = () => {
-  const [selected, setSelected] = useState({ item: '', size: -1 });
+  const [selected, setSelected] = useState({ item: "", size: -1 });
   const [disabled, setDisabled] = useState(true);
   const [available, setAvailable] = useState(true);
   let [counter, setCounter] = useState(1);
@@ -17,27 +17,25 @@ export const CatalogItem = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const hasAvailable = catalogItem.sizes.some(item => item.available);
+    const hasAvailable = catalogItem.sizes.some((item) => item.available);
 
     if (!hasAvailable) {
-      setAvailable(false)
+      setAvailable(false);
     }
-  }, [])
+  }, []);
 
   const selectClickHandler = (size, index) => {
     setSelected({ size, index });
     setDisabled(false);
-  }
+  };
 
   const subtractHandler = () => {
-    if (counter !== 1)
-      setCounter(counter - 1);
-  }
+    if (counter !== 1) setCounter(counter - 1);
+  };
 
   const additionHandler = () => {
-    if (counter !== 10)
-      setCounter(counter + 1);
-  }
+    if (counter !== 10) setCounter(counter + 1);
+  };
 
   const orderClickHandler = () => {
     const order = {
@@ -46,13 +44,12 @@ export const CatalogItem = () => {
       size: selected.size,
       price: catalogItem.price,
       totalPrice: catalogItem.price * counter,
-      counter: counter
-    }
+      counter: counter,
+    };
 
-    dispatch(addCartList(order))
-    navigate('/cart');
-  }
-
+    dispatch(addCartList(order));
+    navigate("/cart");
+  };
 
   return (
     <>
@@ -65,8 +62,11 @@ export const CatalogItem = () => {
               <h2 className="text-center">{catalogItem.title}</h2>
               <div className="row">
                 <div className="col-5">
-                  <img src={catalogItem.images[0]}
-                    className="img-fluid" alt={catalogItem.title} />
+                  <img
+                    src={catalogItem.images[0]}
+                    className="img-fluid"
+                    alt={catalogItem.title}
+                  />
                 </div>
                 <div className="col-7">
                   <table className="table table-bordered">
@@ -98,17 +98,56 @@ export const CatalogItem = () => {
                     </tbody>
                   </table>
                   <div className="text-center">
-                    <p>Размеры в наличии: {catalogItem.sizes.map((item, index) => (
-                      item.available ? <span key={index} className={selected.index === index ? 'catalog-item-size selected' : 'catalog-item-size'} onClick={() => selectClickHandler(item.size, index)}>{item.size}</span> : null
-                    ))} </p>
-                    {available && <p>Количество: <span className="btn-group btn-group-sm pl-2">
-                      <button className="btn btn-secondary" onClick={subtractHandler}>-</button>
-                      <span className="btn btn-outline-primary">{counter}</span>
-                      <button className="btn btn-secondary" onClick={additionHandler}>+</button>
-                    </span>
-                    </p>}
+                    <p>
+                      Размеры в наличии:{" "}
+                      {catalogItem.sizes.map((item, index) =>
+                        item.available ? (
+                          <span
+                            key={index}
+                            className={
+                              selected.index === index
+                                ? "catalog-item-size selected"
+                                : "catalog-item-size"
+                            }
+                            onClick={() => selectClickHandler(item.size, index)}
+                          >
+                            {item.size}
+                          </span>
+                        ) : null,
+                      )}{" "}
+                    </p>
+                    {available && (
+                      <p>
+                        Количество:{" "}
+                        <span className="btn-group btn-group-sm pl-2">
+                          <button
+                            className="btn btn-secondary"
+                            onClick={subtractHandler}
+                          >
+                            -
+                          </button>
+                          <span className="btn btn-outline-primary">
+                            {counter}
+                          </span>
+                          <button
+                            className="btn btn-secondary"
+                            onClick={additionHandler}
+                          >
+                            +
+                          </button>
+                        </span>
+                      </p>
+                    )}
                   </div>
-                  {available && <button className="btn btn-danger btn-block btn-lg" disabled={disabled} onClick={orderClickHandler}>В корзину</button>}
+                  {available && (
+                    <button
+                      className="btn btn-danger btn-block btn-lg"
+                      disabled={disabled}
+                      onClick={orderClickHandler}
+                    >
+                      В корзину
+                    </button>
+                  )}
                 </div>
               </div>
             </section>
@@ -116,7 +155,6 @@ export const CatalogItem = () => {
         </div>
       </main>
       <Footer />
-
     </>
-  )
-}
+  );
+};

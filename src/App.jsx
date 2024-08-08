@@ -1,21 +1,19 @@
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { MainPage } from './components/MainPage/MainPage';
-import { About } from './components/About/About';
-import { Contacts } from './components/Contacts/Contacts';
-import { TopSales } from './components/TopSales/TopSales';
-import { CatalogPage } from './components/Catalog/CatalogPage';
-import { CatalogItem } from './components/Catalog/CatalogItem';
-import { Cart } from './components/Cart/Cart';
-import { NotFound } from './components/NotFound/NotFound';
-
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { MainPage } from "./components/MainPage/MainPage";
+import { About } from "./components/About/About";
+import { Contacts } from "./components/Contacts/Contacts";
+import { TopSales } from "./components/TopSales/TopSales";
+import { CatalogPage } from "./components/Catalog/CatalogPage";
+import { CatalogItem } from "./components/Catalog/CatalogItem";
+import { Cart } from "./components/Cart/Cart";
+import { NotFound } from "./components/NotFound/NotFound";
 
 function App() {
-
   return (
     <>
-      <Router basename='/ra16-diploma-front/'>
+      <Router basename="/ra16-diploma-front/">
         <Routes>
           <Route path="/" exact element={<MainPage />} />
           <Route path="/catalog" exact element={<CatalogPage />} />
@@ -28,7 +26,7 @@ function App() {
         </Routes>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
