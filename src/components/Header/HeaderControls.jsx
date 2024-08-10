@@ -6,14 +6,11 @@ import { fetchCatalog } from "../../redux/slices/catalogSlice";
 import "./HeaderControls.css";
 
 export const HeaderControls = () => {
-  //   const [searchTerm, setSearchTerm] = useState("");
   const [debounceTimeout, setDebounceTimeout] = useState(null);
   const [invisible, setInvisible] = useState(true);
   const inputRef = useRef();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  //   const searchList = useAppSelector((state) => state.searchList.searchList);
-  //   const { catalog, loading, error } = useAppSelector((state) => state.catalog);
   const cartList = useAppSelector((state) => state.cartList.cartList);
 
   const expanderClickHandler = () => {

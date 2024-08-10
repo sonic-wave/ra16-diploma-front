@@ -14,7 +14,6 @@ import { addActiveCatergory } from "../../redux/slices/searchSlice";
 import { clearSearchList } from "../../redux/slices/searchSlice";
 
 export const Catalog = ({ children }) => {
-  //   const [loadMore, setLoadMore] = useState("items");
   const [disabled, setDisabled] = useState(false);
   const [deleteButton, setDeleteButton] = useState(true);
   const [activeCategory, setActiveCategory] = useState(null);
@@ -43,7 +42,6 @@ export const Catalog = ({ children }) => {
 
   const categoryClickHandler = (options, categoryId) => {
     setDeleteButton(true);
-    // setLoadMore(options);
     setActiveCategory(categoryId);
     if (searchList) {
       if (categoryId) {

@@ -103,17 +103,6 @@ export const Cart = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {cartList.length > 0 && cartList.map((item, index) => (
-                                        <tr key={item.id}>
-                                            <td scope="row">{index + 1}</td>
-                                            <td>{item.title}</td>
-                                            <td>{item.size}</td>
-                                            <td>{item.counter}</td>
-                                            <td>{formatNumber(item.price)} руб.</td>
-                                            <td>{formatNumber(item.totalPrice)} руб.</td>
-                                            <td><button className="btn btn-outline-danger btn-sm" onClick={() => deleteItemHandler(item)}>Удалить</button></td>
-                                        </tr>
-                                    ))} */}
                   {combinedCartList.map((item, index) => (
                     <tr key={item.id}>
                       <td scope="row">{index + 1}</td>
@@ -189,7 +178,6 @@ export const Cart = () => {
           </div>
         </div>
       </main>
-
       <Footer />
     </>
   );

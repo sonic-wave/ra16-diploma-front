@@ -10,8 +10,7 @@ const initialState = {
   errorItem: "",
 };
 
-// const localhost = 'https://ra16-diploma-back-ux60.onrender.com/api/'
-const localhost = "http://localhost:7070/api/";
+const localhost = 'https://ra16-diploma-back-ux60.onrender.com/api/'
 
 const createSliceWithThunk = buildCreateSlice({
   creators: { asyncThunk: asyncThunkCreator },

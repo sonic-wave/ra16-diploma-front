@@ -26,14 +26,6 @@ export const CatalogSearch = () => {
       clearTimeout(debounceTimeout);
     }
 
-    // const newTimeout = setTimeout(() => {
-    //     if (value) {
-    //             dispatch(addSearchTerm(value));
-    //     } else {
-    //         dispatch(clearSearchList());
-    //     }
-    // }, 500);
-
     const newTimeout = setTimeout(() => {
       if (value) {
         if (activeCategory) {
@@ -44,7 +36,6 @@ export const CatalogSearch = () => {
           dispatch(fetchCatalog(`items?q=${value}`));
           dispatch(addSearchTerm(value));
         }
-        // ??????????dispatch(clearSearchList());
       } else {
         dispatch(clearSearchList());
         dispatch(fetchCatalog(`items`));
